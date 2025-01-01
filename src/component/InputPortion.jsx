@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Note from "./Note";
+import AddIcon from '@mui/icons-material/Add';
+import UpdateIcon from '@mui/icons-material/Update';
+import { Fab, Zoom } from "@mui/material";
 
 const InputPortion = ({ onAdd, initialNote, isEditing }) => {
   const [inputs, setInputs] = useState({ title: "", content: "" });
@@ -38,9 +42,14 @@ const InputPortion = ({ onAdd, initialNote, isEditing }) => {
         value={inputs.content}
         onChange={handleChange}
       />
-      <button onClick={handleSave}>
-        {isEditing ? 'Update Note' : 'Save Note'}
-      </button>
+      <Zoom in={true}>
+        <Fab onClick={handleSave} >
+        {isEditing ?   <UpdateIcon/>:<AddIcon/> } 
+
+
+        </Fab>
+
+      </Zoom>
     </div>
   );
 };
