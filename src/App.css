@@ -1,0 +1,157 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.head {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: yellow;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.note-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+/* Apply shadow on container focus */
+.note-container:focus-within {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Style input and textarea */
+#note-title, #note-content {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+
+#note-content {
+  min-height: 100px;
+}
+
+/* Style button */
+button {
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.notes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-top: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.note-item {
+  width: 250px;
+  min-height: 150px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.note-item h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  word-wrap: break-word;
+}
+
+.note-item p {
+  margin: 0;
+  color: #666;
+  word-wrap: break-word;
+  margin-bottom: 40px; /* Space for delete button */
+}
+
+
+
+
+/* Added responsiveness */
+@media (max-width: 768px) {
+  .note-container {
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .note-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .notes-grid {
+    padding: 10px;
+  }
+}
+
+.button-group {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button {
+  background-color: #28a745;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.note-item {
+  /* Update padding-bottom to accommodate buttons */
+  padding-bottom: 50px;
+}
