@@ -6,6 +6,7 @@ import { Fab, Zoom } from "@mui/material";
 
 const InputPortion = ({ onAdd, initialNote, isEditing }) => {
   const [inputs, setInputs] = useState({ title: "", content: "" });
+  const[expand, setExpand] = useState(false);
 
   useEffect(() => {
     if (initialNote) {
@@ -26,23 +27,35 @@ const InputPortion = ({ onAdd, initialNote, isEditing }) => {
   };
 
   return (
+    
     <div className="note-container">
-      <input
-        type="text"
-        name="title"
-        id="note-title"
-        placeholder="Title"
-        value={inputs.title}
-        onChange={handleChange}
-      />
+      {expand && (
+          <input
+          type="text"
+          name="title"
+          id="note-title"
+          placeholder="Title"
+          value={inputs.title}
+          onChange={handleChange}
+          />
+      )
+      
+      }
+   
       <textarea
+        onClick={()=>{
+          setExpand(true)
+        }}
         id="note-content"
         name="content"
         placeholder="Write your note here..."
         value={inputs.content}
         onChange={handleChange}
+        rows={expand ? 3 : 1}
       />
-      <Zoom in={true}>
+      <Zoom in={expand}>
+
+        
         <Fab onClick={handleSave} >
         {isEditing ?   <UpdateIcon/>:<AddIcon/> } 
 
