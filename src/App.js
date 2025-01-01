@@ -7,7 +7,7 @@ function App() {
    
       
     <div className="App">
-    <h1 className='head'>Note Keeper Project</h1>
+    <h1 className='head'>Welcome To Jacob's Note Keeper Project</h1>
     {/* <Addnote/> */}
     <NoteList/>
      
